@@ -30,5 +30,7 @@ const request = require('request');
 const url = 'https://api.darksky.net/forecast/c5d45c1e6bc4664f05ad7c45e7ab9d7b/37.8267,-122.4233';
 
 request({ url: url }, (error, response) => {
-    console.log(response);
+    const data = JSON.parse(response.body);
+    // console.log(response);
+    console.log(data.currently);
 });
