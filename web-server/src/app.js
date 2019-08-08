@@ -14,20 +14,20 @@ app.use(express.static(publicDirectoryPath))
 //     res.send('<h1>Hello express!</h1>')
 // })
 
-app.get('/help', (req, res) => {
-    res.send({
-        name: 'joseph',
-        age: 99
-    })
-})
+// app.get('/help', (req, res) => {
+//     res.send({
+//         name: 'joseph',
+//         age: 99
+//     })
+// })
 
 // app.get('/help', (req, res) => {
 //     res.sendFile(publicDirectoryPath+'/help.html')
 // }) 
 
-app.get('/about', (req, res) => {
-    res.send('About!')
-})
+// app.get('/about', (req, res) => {
+//     res.send('About!')
+// })
 
 // app.get('/about', (req, res) => {
 //     res.sendFile(publicDirectoryPath+'/about.html')
