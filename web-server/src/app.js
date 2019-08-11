@@ -42,6 +42,26 @@ app.get('/about', (req, res) => {
     })
  })
 
+app.get('/weather', (req, res) => {
+    res.send('Weather!')
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        'title': 'Help - 404',
+        'message': 'Help article not found.',
+        'name': 'Joseph Magsajo'
+    })
+});
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        'title': '404',
+        'message': 'PAGE NOT FOUND.',
+        'name': 'Joseph Magsajo'
+    })
+});
+
 // app.get('', (req, res) => {
 //     res.send('<h1>Hello express!</h1>')
 // })
@@ -64,10 +84,6 @@ app.get('/about', (req, res) => {
 // app.get('/about', (req, res) => {
 //     res.sendFile(publicDirectoryPath+'/about.html')
 // }) 
-
-app.get('/weather', (req, res) => {
-    res.send('Weather!')
-})
 
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
