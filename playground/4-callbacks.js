@@ -7,25 +7,25 @@ const shortNames = names.filter( (name) => {
     return name.length <= 4
 }) */
 
-const geocode = (address, callback) => {
+// const geocode = (address, callback) => {
     
-    /* const data = {
-        latitude : 0,
-        longitude : 0
-    }
+//     /* const data = {
+//         latitude : 0,
+//         longitude : 0
+//     }
     
-    return data */
+//     return data */
 
-    setTimeout(() => {
-        const data = {
-            latitude : 0,
-            longitude : 0
-        }
+//     setTimeout(() => {
+//         const data = {
+//             latitude : 0,
+//             longitude : 0
+//         }
         
-        callback(data)
-    }, 2000)
+//         callback(data)
+//     }, 2000)
 
-}
+// }
 
 // const data = geocode('Philadelphia')
 // console.log(data)
@@ -42,16 +42,31 @@ const geocode = (address, callback) => {
 // 3. After 2 seconds are up, call the callback function with the sum
 // 4. Test your work!
 
-const add = (a, b, callback) => {
+// const add = (a, b, callback) => {
 
-    setTimeout(() => {
-        const data = a + b
+//     setTimeout(() => {
+//         const data = a + b
         
-        callback(data)
-    }, 2000)
+//         callback(data)
+//     }, 2000)
 
+// }
+
+// add(1, 4, (sum) => {
+//     console.log(sum) // Should print: 5
+// })
+
+const dowWorkCallback = (callback) => {
+    setTimeout( () => {
+        // callback('This is my error!', undefined)
+        callback(undefined, [1, 4, 7])
+    }, 2000)
 }
 
-add(1, 4, (sum) => {
-    console.log(sum) // Should print: 5
+dowWorkCallback((error, result) => {
+    if(error){
+        return console.log(error)
+    }
+
+    console.log(result)
 })
